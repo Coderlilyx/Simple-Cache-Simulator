@@ -1,0 +1,26 @@
+To complie this file, you can use :
+g++ cachesim.cpp
+
+or
+
+g++-4.8 --std=c++11 cachesim.cpp
+If there's something strange happened to the first one, then try the second one.
+
+The default cache setting for this program is 512K cache, 32B blocksize and 4-way associative. But you can change the settings.
+
+After complie the program, run:
+
+./a.out {tracefilename}
+
+or
+
+./a.out {tracefilename} {cache size} {blocksize} {ways of associativity}
+
+For example:
+./a.out gcc-10K.memtrace 512K 16 2
+which means to use the tracefile gcc-10k.memtrace to test a 512K cache, with 16B blocksize and 2-way associative. 
+
+All the size are default to be bytes, so only need to put "K" or "M" to indicates KB and MB, but the "K" and "M" must be capital to successful activate the program.
+For fully associative cache, set the last argument to 0.
+
+Lixiao Li
